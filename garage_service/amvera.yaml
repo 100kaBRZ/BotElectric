@@ -1,0 +1,21 @@
+meta:
+  environment: garage-service
+  project: ваш-проект
+
+build:
+  type: docker
+  dockerfile: backend/Dockerfile
+
+run:
+  containerPort: 3000
+  env:
+    - name: MONGODB_URI
+      fromEnv: MONGODB_URI
+    - name: JWT_SECRET
+      fromEnv: JWT_SECRET
+    - name: FIREBASE_PROJECT_ID
+      fromEnv: FIREBASE_PROJECT_ID
+    - name: FIREBASE_CLIENT_EMAIL
+      fromEnv: FIREBASE_CLIENT_EMAIL
+    - name: FIREBASE_PRIVATE_KEY
+      fromEnv: FIREBASE_PRIVATE_KEY
